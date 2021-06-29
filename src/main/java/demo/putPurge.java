@@ -46,8 +46,8 @@ public class putPurge {
         return string;
     }
     private static void getData() throws IOException {
-        FileWriter success=new FileWriter(System.getProperty("user.dir")+"/purge/success2.txt");
-        FileWriter fild=new FileWriter(new File(System.getProperty("user.dir")+"/purge/failed.txt"));
+        FileWriter success=new FileWriter(new File(System.getProperty("user.dir")+"/outputFile/purge/success.txt"));
+        FileWriter fild=new FileWriter(new File(System.getProperty("user.dir")+"/outputFile/purge/failed.txt"));
 
 
         BufferedReader bufferedReader = null;
