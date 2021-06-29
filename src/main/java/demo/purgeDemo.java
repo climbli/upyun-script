@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * ks ：bc22a21e-dcc1-4e53-b830-f30557a9cb20
  * cb ：8e16d900-cd3d-4f53-8f79-492286f56e79
  */
-public class putPurge {
+public class purgeDemo {
 
     //public  static final String FILE_PATH = "/Users/panzi/Documents/develop/upyun/purge/test.txt";//刷新文件系统位置
 

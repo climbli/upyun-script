@@ -25,7 +25,7 @@ import java.util.*;
  * 新增用户直接在模板中添加列即可
  * 生成后的模板格式需自行更改
  */
-public class writeData_AB {
+public class writeData_ABDemo {
 
     public  static final String Month = "2020-11"; //输入要查询的月份，如2021-04
     public  static final String EXCEL_PATh = System.getProperty("user.dir") + "/AB客户月份信息统计表模板.xlsx";//excel表位置

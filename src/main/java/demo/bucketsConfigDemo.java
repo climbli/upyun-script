@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class getBucketsConfig {
+public class bucketsConfigDemo {
     public  static final String TOKEN = "";//用户token
 
 
