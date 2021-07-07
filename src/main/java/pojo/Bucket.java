@@ -1,4 +1,4 @@
-package bean;
+package pojo;
 
 import java.util.List;
 

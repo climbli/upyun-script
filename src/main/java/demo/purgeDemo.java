@@ -8,18 +8,14 @@ import java.io.*;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 客户小批量刷新
- * csy：9b005079-c4ef-4477-8ddb-84cf27f8ab2b
- * lxp ：2ab0ca6c-feeb-4e70-b930-eebb9dd061ea
- * ks ：bc22a21e-dcc1-4e53-b830-f30557a9cb20
- * cb ：8e16d900-cd3d-4f53-8f79-492286f56e79
+ * 批量刷新
  */
 public class purgeDemo {
 
     //public  static final String FILE_PATH = "/Users/panzi/Documents/develop/upyun/purge/test.txt";//刷新文件系统位置
 
-    public  static final String FILE_PATH = System.getProperty("user.dir") + "/purge/url.txt";//刷新文件项目位置
-    public  static final String TOKEN = "2ab0ca6c-feeb-4e70-b930-eebb9dd061ea";//用户token
+    public  static final String FILE_PATH = System.getProperty("user.dir") + "/outputFile/purge/url.txt";//需要刷新的txt文件
+    public  static final String TOKEN = "";//token
 
 
     public static void main(String[] args) throws IOException {

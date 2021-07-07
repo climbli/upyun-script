@@ -1,4 +1,4 @@
-package bean;
+package pojo;
 
 public class User {
     private String userName;         //用户名
