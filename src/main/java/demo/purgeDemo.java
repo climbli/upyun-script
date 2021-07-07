@@ -14,7 +14,7 @@ public class purgeDemo {
 
     //public  static final String FILE_PATH = "/Users/panzi/Documents/develop/upyun/purge/test.txt";//刷新文件系统位置
 
-    public  static final String FILE_PATH = System.getProperty("user.dir") + "/outputFile/purge/url.txt";//需要刷新的txt文件
+    public  static final String FILE_PATH = System.getProperty("user.dir") + "/outputFile/purge/test.txt";//需要刷新的txt文件
     public  static final String TOKEN = "";//token
 
 
@@ -30,7 +30,7 @@ public class purgeDemo {
                 .readTimeout(50000, TimeUnit.MILLISECONDS)
                 .build();
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        RequestBody body = RequestBody.create(mediaType, "urls="+"http://f.lxpzyy.top"+url);
+        RequestBody body = RequestBody.create(mediaType, "urls="+url);
         Request request = new Request.Builder()
                 .url("https://api.upyun.com/purge")
                 .method("POST", body)

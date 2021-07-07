@@ -19,6 +19,7 @@ import java.util.List;
  */
 public class bucketsConfigDemo {
     public  static final String TOKEN = "";//用户token
+    public  static final String TXT_PATH =System.getProperty("user.dir")+"/outputFile/configMES/bucketsconfig.txt";//配置信息输出文件位置
 
 
     public static void main(String[] args) throws Exception {
@@ -129,7 +130,7 @@ public class bucketsConfigDemo {
      *
      */
     private static void writeFile(List<Bucket> bucketList) throws Exception {
-        File  bucketsconfig=new File(System.getProperty("user.dir")+"/outputFile/configMES/bucketsconfig.txt");
+        File  bucketsconfig=new File(TXT_PATH);
         JSONArray json=new JSONArray();
         for (int i = 0; i < bucketList.size(); i++) {
             JSONObject jsonObject=new JSONObject();
