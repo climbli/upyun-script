@@ -19,4 +19,4 @@ Token文档：https://api.upyun.com/doc#/api/operation/oauth/POST%20%2Foauth%2Ft
 + 根据URL获取一段时间访问的总的流量数
 
 ### 计划新增
-获取服务时间内的的控制台日志总数
++ 获取服务时间内的的控制台日志总数
