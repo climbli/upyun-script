@@ -4,15 +4,15 @@ import java.math.BigDecimal;
 
 public class Analysis {
 
-    private String reqs;
+    private Integer reqs;
     private String content;
     private BigDecimal flow;
 
-    public String getReqs() {
+    public Integer getReqs() {
         return reqs;
     }
 
-    public void setReqs(String reqs) {
+    public void setReqs(Integer reqs) {
         this.reqs = reqs;
     }
 

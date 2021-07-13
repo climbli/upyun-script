@@ -19,35 +19,40 @@ import java.util.List;
 /**
  * 查询单个URL的一段时间的访问流量和次数
  * 又拍云日志分析文档https://api.upyun.com/doc#/api/operation/log/GET%20%2Fanalysis
+ * 输出结果为URL:/在2021-07-01---2021-07-12时间的请求次数为43,流量总数为6048
  */
 
 public class getLogAnalysisDemo {
     public  static final String TOKEN = "";//token
     public  static final String BUCKET_NAME = "";//服务名
     public  static final String DOMAIN = "";//域名 服务名最少选择一个
-    public  static final String DATE = "2021-07-11";//开始日期 格式"2012-01-01"
+    public  static final String DATE = "2021-07-01";//开始日期 格式"2012-01-01"
     public  static final String END_DATE = "2021-07-12";//结束开始日期，单天可不用写"
-    public  static final String TYPE = "url";//类型
     public static void main(String[] args) throws Exception {
 
-       // getDateData("/index.html",DATE);//获取单天的流量数据；
-        getALLData();//获取一段时间的流量总数
+        getALLData("/");//获取一段时间的流量总数，填写要查询的URL
     }
 
     /**
      * 根据URL查询一段时间的总的数据
+     *url  要查询的url
      */
-    private static void getALLData() throws Exception {
+    private static void getALLData(String url) throws Exception {
         List<String> dates = getDates();
         List<BigDecimal> flowList=new ArrayList<BigDecimal>();
+        List<Integer> reqsList=new ArrayList<Integer>();
         for (int i = 0; i < dates.size(); i++) {
             String o = dates.get(i);
-            Analysis dateData = getDateData("/index.html", o);
+            Analysis dateData = getDateData(url, o);
             if (dateData==null){
                     continue;
+            }else{
+                flowList.add(dateData.getFlow());
+                reqsList.add(dateData.getReqs());
             }
-            flowList.add(dateData.getFlow());
+
         }
+        //计算flow的值
         BigDecimal b=new BigDecimal(0);
         for (int i = 0; i < flowList.size(); i++) {
             if (flowList.get(i)==null){
@@ -57,9 +62,17 @@ public class getLogAnalysisDemo {
             }
 
         }
-        System.out.println(b);
+        //计算请求数reqs的值
+        Integer integer=0;
+        for (int i = 0; i < reqsList.size(); i++) {
+            if (reqsList.get(i)==null){
+                continue;
+            }else{
+                integer=reqsList.get(i)+integer;
+            }
 
-
+        }
+        System.out.println("URL:"+url+"在"+DATE+"---"+END_DATE+"时间的请求次数为"+integer+",流量总数为"+b);
     }
     /**
      * 获取单天的访问分析数据
@@ -95,7 +108,7 @@ public class getLogAnalysisDemo {
                      String flow = data.getJSONObject(i).getString("flow");
                      BigDecimal bigDecimal = new BigDecimal(flow);
                      analysis.setFlow(bigDecimal);
-                     analysis.setReqs( data.getJSONObject(i).getString("reqs"));
+                     analysis.setReqs(Integer.parseInt(data.getJSONObject(i).getString("reqs")));
                  }else {
                      continue;
                  }
@@ -124,7 +137,7 @@ public class getLogAnalysisDemo {
         if(BUCKET_NAME.length()==0&&DOMAIN.length()==0){
             System.out.println("服务名和域名必须选一个");
         }
-        sb.append("&date="+date+"&type="+TYPE+"&order_by=1");
+        sb.append("&date="+date+"&type=url&order_by=1");
 
 
         String s = sb.toString();

@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 批量刷新
+ * 已刷新的列表txt文件位置在outputFile/purge下
  */
 public class purgeDemo {
 

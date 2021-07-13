@@ -16,6 +16,7 @@ import java.util.List;
  *获取客户账号下 CDN 服务回源配置
  *获取值为 服务下所有域名，回源IP配置信息
  *又拍云API文档：https://api.upyun.com/doc#/api/guide/overview
+ *
  */
 public class bucketsConfigDemo {
     public  static final String TOKEN = "";//用户token
