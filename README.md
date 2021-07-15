@@ -4,13 +4,13 @@
 ### 环境
 jdk版本 >= 8 
 
-配置 maven
+maven >= 3.3.9
 ### 使用
-所有的DEMO均是需要token作为参数，没有token的话，需要使用 creatTokenDemo 创建token
-
-API文档：https://api.upyun.com/doc#/api/guide/overview
+大部分DEMO需要token作为参数，可以使用 creatTokenDemo 创建token
 
 Token文档：https://api.upyun.com/doc#/api/operation/oauth/POST%20%2Foauth%2Ftokens
+
+API文档：https://api.upyun.com/doc#/api/guide/overview
 
 ### 功能
 
