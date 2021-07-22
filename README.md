@@ -20,3 +20,4 @@ API文档：https://api.upyun.com/doc#/api/guide/overview
 + 获取服务在指定时间内的的控制台日志链接及对应格式
 ### 计划新增
 + 跨bucket转移文件
++ 文件拉取脚本（不限账号和服务）
