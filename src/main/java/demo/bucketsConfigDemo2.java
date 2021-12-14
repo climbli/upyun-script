@@ -22,7 +22,7 @@ import java.util.List;
  *
  */
 public class bucketsConfigDemo2 {
-    public  static final String TOKEN = "";//用户token
+    public  static final String TOKEN = "14b85417-b8cb-4792-99a7-ae371d3097b5";//用户token
     public  static final String TXT_PATH =System.getProperty("user.dir")+"/outputFile/configMES/bucketsconfig.txt";//配置信息输出文件位置
 
 
